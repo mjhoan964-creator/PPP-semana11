@@ -1,0 +1,25 @@
+Entidad: Causa
+
+Campos principales:
+- id (UUID)
+- titulo (string)
+- descripcion (text)
+- fecha_creacion (datetime)
+- autor_id (UUID)
+- estado (string: abierta|cerrada)
+
+Propósito:
+Guardar las causas comunitarias creadas por usuarios para que sean visibles y puedan recibir apoyos. Permite filtrar y listar causas por estado y autor.
+
+Entidad: Apoyo
+
+Campos principales:
+- id (UUID)
+- causa_id (UUID) -> referencia a Causa
+- usuario_id (UUID)
+- tipo_apoyo (string: "firma", "donacion", "voluntariado")
+- comentario (text)
+- fecha (datetime)
+
+Propósito:
+Registrar los apoyos que recibe cada causa para hacer seguimiento de la participación ciudadana y mostrar un contador de apoyos por causa.
